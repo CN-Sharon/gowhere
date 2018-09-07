@@ -1,16 +1,20 @@
 <template>
   <div>
-    <homeheader></homeheader>
+    <home-header></home-header>
+    <home-swiper></home-swiper>
+    1sndjadadns
   </div>
 </template>
 
 <script>
-import homeheader from '@/pages/home/components/Header'
+import HomeHeader from '@/pages/home/components/Header'
+import HomeSwiper from '@/pages/home/components/Swiper'
 
 export default {
   name: 'Home',
   components: {
-    homeheader
+    HomeHeader,
+    HomeSwiper
   }
 }
 </script>
