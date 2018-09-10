@@ -1,14 +1,21 @@
 <template>
   <div class="search">
       <input class="search-input" type="text" placeholder="输入城市名或拼音">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/city-list
   </div>
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
   name: 'CitySearch',
 
+=======
+  name: 'CitySearch'
+>>>>>>> origin/city-list
 }
 </script>
 
