@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item,key) of cities" :key="key">
+      <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list" v-for="innerItem of item" :key="innerItem.id">
           <div class="item border-bottom">{{innerItem.name}}</div>
@@ -42,10 +42,21 @@ export default {
   name: 'CityList',
   props: {
     cities: Object,
-    hotCities: Array
+    hotCities: Array,
+    letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        // 因为this.$refs[this.letter]打印出来是一个数组，而我们要的是dom元素，所以后面加上[0]即可
+        const element = this.$refs[this.letter][0]
+        // this.scroll.scrollToElement(dom元素)
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
